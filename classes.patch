@@ -1,0 +1,54 @@
+--- classes.js	2021-07-28 17:05:30.000000000 -0500
++++ classes_new.js	2021-07-28 17:08:50.248305531 -0500
+@@ -6708,7 +6708,7 @@
+     m_GameShell__init_0($this);
+     $this.$maxSocialListSize = 100;
+     $this.$server = $rt_s(74);
+-    $this.$port = 43594;
++    $this.$port = 43595;
+     $this.$username = $rt_s(1);
+     $this.$password = $rt_s(1);
+     $this.$incomingPacket = $rt_createByteArray(5000);
+@@ -8638,7 +8638,7 @@
+     }
+     var$5 = $this.$component.$imageData;
+     var$8 = $this.$rgbPixels;
+-    var$5.data = var$8;
++    var$5.data.set(var$8);
+     var$5 = $this.$component.$context;
+     var$8 = $this.$component.$imageData;
+     var$5.putImageData(var$8, 0.0, 0.0);
+@@ -15621,7 +15621,7 @@
+             $level = $level_0;
+         }
+         if ($this.$appletMode)
+-            $this.$port = 43594;
++            $this.$port = 43595;
+         m_GameConnection_$callClinit();
+         m_GameConnection_maxReadTries = 1000;
+         m_Version_$callClinit();
+@@ -31523,7 +31523,7 @@
+         $toSend[$i] = var$6;
+         $i = $i + 1 | 0;
+     }
+-    $this.$client.send("");
++    $this.$client.send($toSend);
+ }
+ function m_Socket_refreshCurrentBuffer($this) {
+     if (!$this.$bytesLeft && $this.$bytesAvailable > 0) {
+@@ -31669,7 +31669,7 @@
+     return $this.$bytesAvailable;
+ }
+ function m_Socket_lambda$waitForBytes$2($callback, $result) {
+-    $callback.$complete(jl_Integer_valueOf(1));
++    $callback.$complete(jl_Integer_valueOf($result));
+ }
+ function m_Socket_lambda$waitForBytes$1($callback, $result) {
+     $callback.$complete(jl_Integer_valueOf($result));
+@@ -32646,4 +32646,4 @@
+ })();
+ })();
+ 
+-//# sourceMappingURL=classes.js.map
+\ No newline at end of file
++//# sourceMappingURL=classes.js.map
